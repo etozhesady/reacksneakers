@@ -30,3 +30,25 @@ header {
     margin: 0;
   }
 }
+
+.card {
+  border: 1px solid #F8F8F8;
+  padding: 30px;
+  width: 210px;
+  border-radius: 40px;
+
+  h5 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.button {
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
