@@ -23,7 +23,20 @@ function App() {
       </header>
       <div className="content p-40">
         <h1>Все кроссовки</h1>
-        ...
+
+        <div className="card">
+          <img src="/img/sneakers/1.jpg" alt="Sneakers"/>
+          <p></p>
+          <div>
+            <div>
+              <span>Цена:</span>
+              <b>12 999 руб.</b>
+            </div>
+            <button>
+              <img width={11} height={11} src="/img/plus.svg" alt="Plus" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
