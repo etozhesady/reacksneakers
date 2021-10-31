@@ -22,6 +22,8 @@ function App() {
             title="Абибас"
             price="1337"
             imageUrl="/img/sneakers/1.jpg"
+            onClickFavorite={() => console.log('Добавили в закладки')}
+            onClickPlus={() => console.log('Добавили в корзину')}
           />
 
         </div>
