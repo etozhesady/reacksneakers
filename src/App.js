@@ -18,10 +18,11 @@ function App() {
           </div>
         </div>
         <div className="d-flex">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card
+            title="Абибас"
+            price="1337"
+            imageUrl="/img/sneakers/1.jpg"
+          />
 
         </div>
 
