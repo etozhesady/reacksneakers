@@ -27,7 +27,7 @@ function Drawer() {
                     </div>
                 </div>
 
-                <div class="cartTotalBlock">
+                <div className="cartTotalBlock">
                     <ul>
                         <li>
                             <span>Итого:</span>
