@@ -18,7 +18,7 @@ function App() {
             <input placeholder="Поиск" />
           </div>
         </div>
-        <div className="d-flex">
+        <div className="d-flex flex-wrap">
           <Card
             title="Абибас"
             price="1337"
