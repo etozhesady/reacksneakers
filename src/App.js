@@ -5,6 +5,7 @@ import Drawer from "./components/Drawer";
 
 function App() {
   const [items, setItems] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
   const [cartOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
@@ -16,9 +17,14 @@ function App() {
         setItems(json);
       });
   }, []);
+
+  const onAddToCart = (obj) => {
+    setCartItems([...cartItems, obj])
+  }
+
   return (
     <div className="wrapper clear">
-      {cartOpened ? <Drawer onClose={() => setCartOpened(false)} /> : null}
+      {cartOpened ? <Drawer items={cartItems} onClose={() => setCartOpened(false)} /> : null}
       <Header onClickCart={() => setCartOpened(true)} />
 
       <div className="content p-40">
@@ -36,7 +42,7 @@ function App() {
               price={item.price}
               imageUrl={item.imageUrl}
               onClickFavorite={() => console.log("Добавили в закладки")}
-              onClickPlus={() => console.log("Добавили в корзину")}
+              onClickPlus={(obj) => onAddToCart(obj)}
             />
           ))}
         </div>
