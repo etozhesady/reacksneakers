@@ -14,11 +14,15 @@ function App() {
     axios
       .get("https://61881df0057b9b00177f9bbb.mockapi.io/items")
       .then((res) => {
-        setItems(res.data);
+        setItems(res.data)
       });
+    axios.get('https://61881df0057b9b00177f9bbb.mockapi.io/cart').then((res) => {
+      setCartItems(res.data)
+    })
   }, []);
 
   const onAddToCart = (obj) => {
+    axios.post('https://61881df0057b9b00177f9bbb.mockapi.io/cart', obj)
     setCartItems([...cartItems, obj]);
   };
 
