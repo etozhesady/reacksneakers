@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import axios from "axios/";
 import Header from "./components/Header";
 import Card from "./components/Card";
 import Drawer from "./components/Drawer";
@@ -7,6 +7,7 @@ import Drawer from "./components/Drawer";
 function App() {
   const [items, setItems] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
+  const [favorites, setFavorites] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState("");
   const [cartOpened, setCartOpened] = React.useState(false);
 
@@ -32,6 +33,11 @@ function App() {
     axios.delete(`https://61881df0057b9b00177f9bbb.mockapi.io/cart/${id}`);
     console.log(id)
     setCartItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const onAddToFavorite = (obj) => {
+    axios.post("https://61881df0057b9b00177f9bbb.mockapi.io/favs", obj);
+    setFavorites([...cartItems, obj]);
   };
 
   const onChangeSearchInput = (event) => {
@@ -82,7 +88,7 @@ function App() {
                 title={item.title}
                 price={item.price}
                 imageUrl={item.imageUrl}
-                onClickFavorite={() => console.log("Добавили в закладки")}
+                onClickFavorite={(obj) => onAddToFavorite(obj)}
                 onClickPlus={(obj) => onAddToCart(obj)}
               />
             ))}
