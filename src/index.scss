@@ -6,7 +6,7 @@ body {
 }
 
 * {
-  font-family: 'Inter', system-ui;
+  font-family: "Inter", system-ui;
 }
 
 .wrapper {
@@ -34,6 +34,34 @@ header {
   }
 }
 
+.cartEmpty {
+  text-align: center;
+
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+
+  .greenButton {
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+
 .search-block {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
@@ -44,7 +72,6 @@ header {
     position: absolute;
     right: 5px;
     top: 7px;
-    
   }
 
   input {
@@ -75,7 +102,7 @@ header {
   background: #fff;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  
+
   .items {
     flex: 1;
     overflow: auto;
@@ -94,19 +121,19 @@ header {
       display: flex;
       align-items: flex-end;
       margin-bottom: 20px;
-  
     }
     div {
       flex: 1;
       height: 1px;
-      border-bottom: 1px dashed #dfdfdf;margin-bottom: 20px;
+      border-bottom: 1px dashed #dfdfdf;
+      margin-bottom: 20px;
       position: relative;
       top: -4px;
       margin: 0 7px;
     }
   }
 
-  .greenButton { 
+  .greenButton {
     position: relative;
 
     &:hover {
@@ -125,24 +152,24 @@ header {
 }
 
 .greenButton {
-    width: 100%;
-    height: 55px;
-    background: #9dd558;
-    border-radius: 20px;
-    border: 0;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
+  width: 100%;
+  height: 55px;
+  background: #9dd558;
+  border-radius: 20px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
 
-    &:hover {
-      background: lighten(#9dd558, 5%);
-    }
+  &:hover {
+    background: lighten(#9dd558, 5%);
+  }
 
-    &:active {
-      background: darken(#9dd558, 5%);
-    }
+  &:active {
+    background: darken(#9dd558, 5%);
+  }
 }
 
 .cartItem {
@@ -163,7 +190,7 @@ header {
   p {
     font-size: 14px;
     margin: 0;
-  } 
+  }
 
   b {
     font-size: 16px;
@@ -178,5 +205,4 @@ header {
       opacity: 1;
     }
   }
-
 }
