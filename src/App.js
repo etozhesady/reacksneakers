@@ -4,6 +4,7 @@ import axios from "axios/";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 import Home from "./pages/Home";
+import Favorites from "./pages/Favorites";
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -70,7 +71,9 @@ function App() {
               onAddToCart={onAddToCart}
             />
           }
-        ></Route>
+        />
+
+        <Route path="/favorites" exact element={<Favorites />} />
       </Routes>
     </div>
   );
