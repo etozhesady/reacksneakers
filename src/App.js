@@ -43,17 +43,21 @@ function App() {
   };
 
   const onAddToFavorite = async (obj) => {
-    if (favorites.find((favObj) => favObj.id === obj.id)) {
-      axios.delete(
-        `https://61881df0057b9b00177f9bbb.mockapi.io/favs/${obj.id}`
-      );
-      // setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
-    } else {
-      const { data } = await axios.post(
-        "https://61881df0057b9b00177f9bbb.mockapi.io/favs",
-        obj
-      );
-      setFavorites((prev) => [...prev, data]);
+    try {
+      if (favorites.find((favObj) => favObj.id === obj.id)) {
+        axios.delete(
+          `https://61881df0057b9b00177f9bbb.mockapi.io/favs/${obj.id}`
+        );
+        // setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
+      } else {
+        const { data } = await axios.post(
+          "https://61881df0057b9b00177f9bbb.mockapi.io/favs",
+          obj
+        );
+        setFavorites((prev) => [...prev, data]);
+      }
+    } catch (error) {
+      alert("Не удалось добавить в закладки");
     }
   };
 
