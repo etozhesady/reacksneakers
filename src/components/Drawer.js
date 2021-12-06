@@ -4,19 +4,14 @@ function Drawer({ onClose, onRemove, items = [] }) {
       <div className="drawer">
         <h2 className="d-flex justify-between mb-30">
           Корзина
-          <img
-            onClick={onClose}
-            className="cu-p"
-            src="/img/btn-remove.svg"
-            alt="Close"
-          />
+          <img onClick={onClose} className="cu-p" src="/img/btn-remove.svg" alt="Close" />
         </h2>
 
         {items.length > 0 ? (
           <div>
             <div className="items">
               {items.map((obj) => (
-                <div className="cartItem d-flex align-center mb-20">
+                <div key={obj.id} className="cartItem d-flex align-center mb-20">
                   <div
                     style={{ backgroundImage: `url(${obj.imageUrl})` }}
                     className="cartItemImg"
@@ -62,9 +57,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
               alt="Empty"
             />
             <h2>Корзина пустая</h2>
-            <p className="opacity-6">
-              Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.
-            </p>
+            <p className="opacity-6">Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
             <button onClick={onClose} className="greenButton">
               <img src="/img/arrow.svg" alt="Arrow" />
               Вернуться назад
