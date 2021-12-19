@@ -1,11 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios/";
+
 import Header from "./components/Header";
-import Drawer from "./components/Drawer";
+import Drawer from "./components/Drawer/index.js";
+
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Orders from "./pages/Orders";
+
 import AppContext from "./context";
 
 function App() {
@@ -33,7 +36,6 @@ function App() {
   }, []);
 
   const onAddToCart = (obj) => {
-    console.log("obj ", obj);
     if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
       axios.delete(`https://61881df0057b9b00177f9bbb.mockapi.io/cart/${obj.id}`);
       setCartItems((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
@@ -85,9 +87,12 @@ function App() {
       }}
     >
       <div className="wrapper clear">
-        {cartOpened ? (
-          <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} />
-        ) : null}
+        <Drawer
+          items={cartItems}
+          onClose={() => setCartOpened(false)}
+          onRemove={onRemoveItem}
+          opened={cartOpened}
+        />
 
         <Header onClickCart={() => setCartOpened(true)} />
         <Routes>
