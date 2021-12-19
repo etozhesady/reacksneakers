@@ -47,9 +47,11 @@ function Card({
         </ContentLoader>
       ) : (
         <>
-          <div className={cardStyles.favorite} onClick={onFavorite}>
-            <img src={isFavorite ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked" />
-          </div>
+          {onClickFavorite && (
+            <div className={cardStyles.favorite} onClick={onFavorite}>
+              <img src={isFavorite ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked" />
+            </div>
+          )}
           <img width="100%" height={135} src={imageUrl} alt="Sneakers" />
           <h5>{title}</h5>
           <div className="d-flex justify-between align-center">
