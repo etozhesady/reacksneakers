@@ -7,7 +7,7 @@ function Header(props) {
   const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
   return (
     <header className="d-flex justify-between align-center p-40">
-      <Link to="/">
+      <Link to={process.env.PUBLIC_URL + "/"}>
         <div className="d-flex align-center">
           <img width={40} height={40} src="img/logo.png" alt="Logo" />
           <div>
