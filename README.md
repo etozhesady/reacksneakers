@@ -24,6 +24,15 @@ Card animation
 
 ![card animation](https://github.com/etozhesady/reactsneakers/blob/master/public/img/card%20animation.gif?raw=true "card animation")
 
+**Stack:**
+
+- ReactJS + хуки
+- React Router
+- Axios
+- SCSS
+- React Context
+- React Skeleton
+
 ## Installation
 
 Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install reactsneakers.
