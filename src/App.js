@@ -138,7 +138,7 @@ function App() {
           />
 
           <Route path="/reactsneakers/favorites" exact element={<Favorites />} />
-          <Route path="/reactsneakrs/orders" exact element={<Orders />} />
+          <Route path="/reactsneakers/orders" exact element={<Orders />} />
         </Routes>
       </div>
     </AppContext.Provider>
